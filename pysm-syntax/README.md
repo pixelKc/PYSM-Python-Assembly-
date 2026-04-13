@@ -12,11 +12,11 @@ PYSM is a lightweight, procedural, assembly-themed scripting language built in r
 
 ## 🛠️ Installation
 1. Clone this repo.
-2. Add the folder containing `pysm.bat` to your **System PATH** (Windows).
+2. Download the [PYSM Installation Wizard](https://github.com/pixelKc/PYSM-Python-Assembly-/releases) from this github repository
 3. Install the [PYSM Syntax Highlighting](vscode:extension/pixelkc.pysm-syntax) Vscode Extension
 
 ## 🚀 Quick Start: Countdown
-```asm
+```pysm
 SET INT i 10
 
 :LOOP
