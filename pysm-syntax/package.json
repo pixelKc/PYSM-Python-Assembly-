@@ -1,0 +1,40 @@
+{
+  "name": "pysm-syntax",
+  "displayName": "Python Assembly (PYSM) Syntax Highlighting",
+  "publisher": "PixelKc",
+  "version": "1.0.0",
+  "engines": {
+    "vscode": "^1.90.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "contributes": {
+    "configurationDefaults": {
+      "[pysm]": {
+        "code-runner.executorMap": {
+          "pysm": "pysm $fullFileName"
+        }
+      }
+    },
+    "languages": [
+      {
+        "id": "pysm",
+        "aliases": [
+          "pysm"
+        ],
+        "extensions": [
+          ".pysm"
+        ],
+        "configuration": "./language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "pysm",
+        "scopeName": "source.pysm",
+        "path": "./syntaxes/pysm.tmLanguage.json"
+      }
+    ]
+  }
+}

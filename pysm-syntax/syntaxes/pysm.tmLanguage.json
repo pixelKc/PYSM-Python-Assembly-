@@ -1,0 +1,48 @@
+{
+  "scopeName": "source.pysm",
+  "patterns": [
+    { "include": "#comments" },
+    { "include": "#labels" },
+    { "include": "#opcodes" },
+    { "include": "#types" },
+    { "include": "#numbers" },
+    { "include": "#strings" },
+    { "include": "#concatinate" },
+    { "include": "#variables" }
+  ],
+  "repository": {
+    "comments": {
+      "match": "#.*$",
+      "name": "comment.line.number-sign.pysm"
+    },
+    "labels": {
+      "match": "^\\s*:[A-Za-z0-9_]+",
+      "name": "entity.name.function.pysm"
+    },
+    "opcodes": {
+      "match": "\\b(?i)(SET|OUT|INP|JMP|JZ|JNZ|CAL|RET|SLP|ADD|SUB|MUL|DIV|MOD|INC|DEC|RNG|CLR|OPN|RED|WRT|CLS|HLT)\\b",
+      "name": "keyword.control.pysm"
+    },
+    "types": {
+      "match": "\\b(?i)(INT|FLT|STR|ARR|FILE)\\b",
+      "name": "storage.type.pysm"
+    },
+    "numbers": {
+      "match": "\\b(?i)(\\d+(\\.\\d+)?|NULL)\\b",
+      "name": "constant.numeric.pysm"
+    },
+    "strings": {
+      "begin": "\"",
+      "end": "\"",
+      "name": "string.quoted.double.pysm"
+    },
+    "concatinate": {
+      "match": "<-",
+      "name": "constant.language.pysm"
+    },
+    "variables": {
+      "match": "\\b[a-zA-Z_][a-zA-Z0-9_]*\\b",
+      "name": "support.variable.pysm"
+    }
+  }
+}
