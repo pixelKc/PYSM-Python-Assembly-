@@ -9,7 +9,6 @@ OUT "Enter a number: "
 INP x
 OUT "Enter another number: "
 INP y
-JMP CHECK
 
 :CHECK
 OUT "1. Addition\n2. Subtraction\n3. Multiplication\n4. Division\n5. Modulo\n"
