@@ -12,7 +12,7 @@ INP y
 JMP CHECK
 
 :CHECK
-OUT "1. Addition\n2. Subtraction\n3. Multiplication\n4. Division\n5. Modulous\n"
+OUT "1. Addition\n2. Subtraction\n3. Multiplication\n4. Division\n5. Modulo\n"
 OUT "Select (1 - 5): "
 INP opr
 # Checks if the user input is = 1 (Addition)
@@ -27,9 +27,9 @@ JZ chk MULTIPLICATION
 # Checks if the user input is = 4 (Division)
 SUB opr 4 chk
 JZ chk DIVISION
-# Checks if the user input is = 5 (Modulous)
+# Checks if the user input is = 5 (Modulo)
 SUB opr 5 chk
-JZ chk MODULOUS
+JZ chk MODULO
 # Loops back if the input wasn't valid
 OUT "Please enter a valid number between 1 and 5\n"
 JMP CHECK
@@ -55,7 +55,7 @@ DIV x y z
 # Setting the character to display when displaying the result and saving it to a file
 SET STR opsign "/"
 JMP RESULT
-:MODULOUS
+:MODULO
 MOD x y z
 # Setting the character to display when displaying the result and saving it to a file
 SET STR opsign "%"
