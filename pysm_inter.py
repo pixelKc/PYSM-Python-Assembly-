@@ -229,7 +229,10 @@ def main() -> None:
             else:
                 raise OpcodeError(command_split[0].upper())
     except Exception as e:
-        line_display = lines[program_counter] if program_counter < len(lines) else "unknown"
+        if program_counter < len(lines):
+            print("PYSM Error: program counter out of range")
+            sys.exit()
+        line_display = lines[program_counter]
         print(f"PYSM Error on line {program_counter+1}: {e} \n{line_display}")
         sys.exit()
 
