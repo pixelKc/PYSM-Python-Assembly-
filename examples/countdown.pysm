@@ -1,0 +1,18 @@
+# Setting the countdown variable
+SET INT i 10
+
+:LOOP
+# Clearing the screen
+CLR
+# Printing the current value of i
+OUT i <- "\n"
+# Pausing for 1 second
+SLP 1
+# Decrementing the countdown variable
+DEC i
+# Jumping back to the start
+JNZ i LOOP
+
+CLR
+OUT "Happy New Year!"
+HLT

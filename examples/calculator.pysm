@@ -1,0 +1,73 @@
+# Setting Variables
+SET INT x 0
+SET INT y 0
+SET INT z 0
+SET INT opr 0
+SET INT chk 0
+# Getting 2 numbers from user input
+OUT "Enter a number: "
+INP x
+OUT "Enter another number: "
+INP y
+JMP CHECK
+
+:CHECK
+OUT "1. Addition\n2. Subtraction\n3. Multiplication\n4. Division\n5. Modulous\n"
+OUT "Select (1 - 5): "
+INP opr
+# Checks if the user input is = 1 (Addition)
+SUB opr 1 chk
+JZ chk ADDITION
+# Checks if the user input is = 2 (Subtraction)
+SUB opr 2 chk
+JZ chk SUBTRACTION
+# Checks if the user input is = 3 (Multiplication)
+SUB opr 3 chk
+JZ chk MULTIPLICATION
+# Checks if the user input is = 4 (Division)
+SUB opr 4 chk
+JZ chk DIVISION
+# Checks if the user input is = 5 (Modulous)
+SUB opr 5 chk
+JZ chk MODULOUS
+# Loops back if the input wasn't valid
+OUT "Please enter a valid number between 1 and 5\n"
+JMP CHECK
+
+# Perform Operation
+:ADDITION
+ADD x y z
+# Setting the character to display when displaying the result and saving it to a file
+SET STR opsign "+"
+JMP RESULT
+:SUBTRACTION
+SUB x y z
+# Setting the character to display when displaying the result and saving it to a file
+SET STR opsign "-"
+JMP RESULT
+:MULTIPLICATION
+MUL x y z
+# Setting the character to display when displaying the result and saving it to a file
+SET STR opsign "*"
+JMP RESULT
+:DIVISION
+DIV x y z
+# Setting the character to display when displaying the result and saving it to a file
+SET STR opsign "/"
+JMP RESULT
+:MODULOUS
+MOD x y z
+# Setting the character to display when displaying the result and saving it to a file
+SET STR opsign "%"
+
+:RESULT
+# Printing the result
+OUT "Result: " <- x <- " " <- opsign <- " " <- y <- " = " <- z <- "\n"
+# Saving the result to a file
+SET FILE history NULL
+OPN history "history.txt" A
+WRT history "Result: " <- x <- " " <- opsign <- " " <- y <- " = " <- z <- "\n"
+# Don't forget to close the file handle
+CLS history
+# Halt at the end of the program
+HLT
