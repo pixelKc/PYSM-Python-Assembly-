@@ -11,12 +11,11 @@ PYSM is a lightweight, procedural, assembly-themed scripting language built in r
 * **Labels**: Labels so that your programs functionality is not determined by your ability to count from 0
 
 ## 🛠️ Installation
-1. Clone this repo.
-2. Add the folder containing `pysm.bat` to your **System PATH** (Windows).
-3. Install the [PYSM Syntax Highlighting](vscode:extension/pixelkc.pysm-syntax) Vscode Extension
+1. Download the [PYSM Installation Wizard](https://github.com/pixelKc/PYSM-Python-Assembly-/releases) from this github repository
+2. Install the [PYSM Syntax Highlighting](vscode:extension/pixelkc.pysm-syntax) Vscode Extension
 
 ## 🚀 Quick Start: Countdown
-```asm
+```pysm
 SET INT i 10
 
 :LOOP
