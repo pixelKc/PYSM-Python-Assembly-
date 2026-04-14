@@ -30,8 +30,15 @@ def main() -> None:
         def __init__(self, opcode):
             super().__init__(f"OPCODE: '{opcode}' was not found")
 
-    with open(sys.argv[1]) as PYSMSCRIPT:
-        lines: list[str] = [line.strip() for line in PYSMSCRIPT.readlines()]
+    try:
+        with open(sys.argv[1]) as PYSMSCRIPT:
+            lines: list[str] = [line.strip() for line in PYSMSCRIPT.readlines()]
+    except IndexError:
+        print("PYSM Error: Please pass a file name as a command line argument")
+        sys.exit()
+    except FileNotFoundError:
+        print(f"PYSM Error: File Not Found {sys.argv[1]}")
+        sys.exit()
 
     labels: dict[str, int] = {}
     for i, line in enumerate(lines):
